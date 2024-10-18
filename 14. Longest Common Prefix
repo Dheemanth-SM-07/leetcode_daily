@@ -1,0 +1,16 @@
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+     if(strs.empty())
+     return "";
+     for(int i=0;i<strs[0].length();i++)//size of the first substring 
+     {
+        for(int j=0;j<strs.size();j++)//size of the whole string 
+        {
+            if(i==strs[j].length()|| strs[j][i]!=strs[0][i])//compare j and i to the 0 and ith of the string 
+            return strs[0].substr(0,i);//0 to ith substring 
+        }
+     }
+     return strs[0];//the actual common part of the string 
+    }
+};
